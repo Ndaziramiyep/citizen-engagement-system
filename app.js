@@ -14,7 +14,7 @@ const auditLogRoutes = require('./routes/audit-logs');
 const notificationSettingsRoutes = require('./routes/notification-settings');
 
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 // Middleware for JSON parsing
 app.use(express.json());
@@ -32,7 +32,7 @@ app.use('/api/v1/notification-settings', notificationSettingsRoutes);
 
 // Enable CORS
 app.use(cors({
-  origin: 'http://localhost:3001', // Change to your Next.js port if not 3001
+  origin: 'http://localhost:3000', // Allow Next.js frontend
   credentials: true
 }));
 

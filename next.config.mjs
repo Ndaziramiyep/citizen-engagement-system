@@ -9,6 +9,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/auth/:path*',
+        destination: 'http://localhost:3001/auth/:path*', // your backend URL
+      },
+    ];
+  },
 }
 
 export default nextConfig

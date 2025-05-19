@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react"
 import Link from "next/link"
 import { LayoutDashboard, LogOut, MessageSquare, Settings, User } from "lucide-react"
@@ -5,12 +7,15 @@ import { LayoutDashboard, LogOut, MessageSquare, Settings, User } from "lucide-r
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useAuth } from '@/lib/auth-context'
 
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const { user } = useAuth();
+
   return (
     <div className="flex min-h-screen flex-col">
       <div className="flex flex-1">
@@ -29,7 +34,7 @@ export default function DashboardLayout({
                   <AvatarFallback>JD</AvatarFallback>
                 </Avatar>
                 <div>
-                  <h3 className="font-medium">John Doe</h3>
+                  <h3 className="font-medium">{user ? `${user.firstName} ${user.lastName}` : "User"}</h3>
                   <p className="text-xs text-muted-foreground">Citizen</p>
                 </div>
               </div>
@@ -84,7 +89,7 @@ export default function DashboardLayout({
                 <AvatarFallback>JD</AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="font-medium">John Doe</h3>
+                <h3 className="font-medium">{user ? `${user.firstName} ${user.lastName}` : "User"}</h3>
                 <p className="text-xs text-muted-foreground">Citizen</p>
               </div>
             </div>
