@@ -57,10 +57,5 @@ A modern web application for citizens to submit, track, and manage complaints an
 - `/public` - Static assets
 
 ## Environment Variables
-You can use a `.env` file to store sensitive configuration (e.g., JWT secret, DB credentials).
+We used a `.env` file to store sensitive configuration (e.g: DB credentials).
 
-## Contribution
-Contributions are welcome! Please open issues or submit pull requests for improvements or bug fixes.
-
-## License
-This project is licensed under the MIT License.
